@@ -45,4 +45,7 @@ public class Map {
         encounterList.add(new Battle(boss));
     }
 
+    public int getLevel() {
+        return level;
+    }
 }
