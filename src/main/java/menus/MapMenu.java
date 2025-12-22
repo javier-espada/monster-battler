@@ -1,4 +1,5 @@
-package PACKAGE_NAME;
+package menus;
 
-public class Menu {
+public class MapMenu {
+
 }

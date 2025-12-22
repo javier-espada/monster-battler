@@ -1,0 +1,6 @@
+name;type;health;power;speed;defense;level
+fireboss;fire;2;4;4;2;1
+airboss;air;2;2;4;4;1
+earthboss;earth;2;4;2;4;1
+woodboss;wood;4;2;2;4;1
+voidboss;void;5;5;5;5;1
