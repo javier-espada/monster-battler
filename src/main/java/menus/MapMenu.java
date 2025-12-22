@@ -1,4 +1,4 @@
-package menus
+package menus;
 
 public class MapMenu {
     Map map = new Map();
