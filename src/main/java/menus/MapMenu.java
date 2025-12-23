@@ -34,7 +34,11 @@ public class MapMenu {
                     switch (encounterType) {
                         case "Battle":
                             System.out.println("It's a battle!");
-                            BattleMenu battleMenu = new BattleMenu((Battle) map.getEncounterList().get(map.getCurrentEncounter()));
+                            BattleMenu battleMenu = new BattleMenu((Battle) map.getEncounterList().get(map.getCurrentEncounter()+i));
+                            if(((Battle) map.getEncounterList().get(map.getCurrentEncounter()+i)).getEnemy()==map.getBoss())1{
+                            System.out.println("You won!");
+                            System.exit(0);
+                        }
                             battleMenu.run();
                             break;
                         case "Rest":

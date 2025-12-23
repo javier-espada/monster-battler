@@ -111,4 +111,8 @@ public class Map {
     public Monster getMyMonster() {
         return myMonster;
     }
+
+    public Monster getBoss() {
+        return boss;
+    }
 }
