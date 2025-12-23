@@ -13,8 +13,6 @@ public class TrainingSpot extends Encounter {
 
     public static void levelUp(Monster monster,int option){
         monster.setLevel(monster.getLevel()+1);
-        monster.setHp(monster.getLevel()*monster.getHealth());
-
         switch(option){
             case 1:
                 monster.setHealth(monster.getHealth()+1);
@@ -33,5 +31,7 @@ public class TrainingSpot extends Encounter {
                 levelUp(monster,option);
                 break;
         }
+        monster.setHp(monster.getLevel()*monster.getHealth());
+
     }
 }

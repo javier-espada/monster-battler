@@ -51,6 +51,7 @@ public class MapMenu {
                                 case 'y':
                                     map.setMyMonster(((Battle) map.getEncounterList().get(map.getCurrentEncounter() + i)).getEnemy());
                                     RestSite.healMonster(map.getMyMonster());
+                                    map.setMyMonster(map.getMyMonster());
                                     for (Encounter encounter:map.getEncounterList()) {
                                         encounter.setMyMonster(map.getMyMonster());
                                     }
@@ -64,6 +65,10 @@ public class MapMenu {
                             System.out.println("It's a rest site!");
                             System.out.println("You fully heal");
                             RestSite.healMonster(map.getMyMonster());
+                            map.setMyMonster(map.getMyMonster());
+                            for (Encounter encounter:map.getEncounterList()) {
+                                encounter.setMyMonster(map.getMyMonster());
+                            }
                             break;
                         case "Training":
                             System.out.println("It's a training site!");
@@ -74,6 +79,10 @@ public class MapMenu {
                             int trainOption = sc.nextInt();
                             sc.nextLine();
                             TrainingSpot.levelUp(map.getMyMonster(), trainOption);
+                            map.setMyMonster(map.getMyMonster());
+                            for (Encounter encounter:map.getEncounterList()) {
+                                encounter.setMyMonster(map.getMyMonster());
+                            }
                             break;
 
                     }

@@ -14,10 +14,15 @@ public class Map {
 
     void setRandomBoss() throws IOException {
         File inFile = new File("src/main/resources/Bosses.csv");
+        int random = (int) (Math.random() * 3);
         Scanner inputFile = new Scanner(inFile);
         String str;
-        String[] tokens = new String[7];
+        String[] tokens= new String[7];
         inputFile.nextLine();
+        inputFile.nextLine();
+        for (int i = 0; i <= random; i++) {
+            inputFile.nextLine();
+        }
         str = inputFile.nextLine();
         tokens = str.split(";");
 
@@ -34,11 +39,15 @@ public class Map {
 
     void setRandomEnemy() throws IOException {
         File inFile = new File("src/main/resources/Monsters.csv");
+        int random = (int) (Math.random() * 7);
         Scanner inputFile = new Scanner(inFile);
         String str;
         String[] tokens= new String[7];
         inputFile.nextLine();
         inputFile.nextLine();
+        for (int i = 0; i <= random; i++) {
+            inputFile.nextLine();
+        }
         str = inputFile.nextLine();
         tokens = str.split(";");
 
