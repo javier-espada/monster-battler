@@ -32,14 +32,14 @@ public class MapMenu {
             switch (option) {
                 case 1:
                     System.out.println("Let's explore:");
-                    String encounterType = map.getEncounterList().get(map.getCurrentEncounter()+i).getType();
+                    String encounterType = map.getEncounterList().get(map.getCurrentEncounter()).getType();
                     switch (encounterType) {
                         case "Battle":
                             System.out.println("It's a battle!");
                             BattleMenu battleMenu = new BattleMenu((Battle) map.getEncounterList().get(map.getCurrentEncounter()+i));
 
                             battleMenu.run();
-                            if(((Battle) map.getEncounterList().get(map.getCurrentEncounter()+i)).getEnemy()==map.getBoss()){
+                            if(((Battle) map.getEncounterList().get(map.getCurrentEncounter())).getEnemy()==map.getBoss()){
                                 System.out.println("You won!");
                                 System.exit(0);
                             }
@@ -49,7 +49,7 @@ public class MapMenu {
                             char capture = sc2.next().charAt(0);
                             switch (capture) {
                                 case 'y':
-                                    map.setMyMonster(((Battle) map.getEncounterList().get(map.getCurrentEncounter() + i)).getEnemy());
+                                    map.setMyMonster(((Battle) map.getEncounterList().get(map.getCurrentEncounter())).getEnemy());
                                     RestSite.healMonster(map.getMyMonster());
                                     map.setMyMonster(map.getMyMonster());
                                     for (Encounter encounter:map.getEncounterList()) {
@@ -86,7 +86,7 @@ public class MapMenu {
                             break;
 
                     }
-
+                map.setCurrentEncounter(map.getCurrentEncounter()+1);
                 break;
                 case 2:
 
