@@ -48,6 +48,7 @@ public class MapMenu {
                             switch (capture) {
                                 case 'y':
                                     map.setMyMonster(((Battle) map.getEncounterList().get(map.getCurrentEncounter() + i)).getEnemy());
+
                                     break;
                                 default:
                                     break;
