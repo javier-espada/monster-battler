@@ -20,8 +20,8 @@ public class Battle extends Encounter {
         return monster1;
     }
     void attackMonster(Monster monster1, Monster monster2) {
-        monster2.setHp(monster2.getHp()-(monster1.attack()-monster2.defend()+5));
-        System.out.println(monster2.getName() + " was attacked! It received "+ (monster1.attack()-monster2.defend()) + " damage!");
+        monster2.setHp(monster2.getHp()-(5+monster1.attack()-monster2.defend()));
+        System.out.println(monster2.getName() + " was attacked! It received "+ (5+monster1.attack()-monster2.defend()) + " damage!");
     }
     public Monster battleMonster(Monster monster1) {
         while(monster1.getHp()>0 && enemy.getHp()>0){
@@ -32,14 +32,14 @@ public class Battle extends Encounter {
                 attackMonster(enemy,monster1);
                 attackMonster(monster1,enemy);
             }
-        }
-        if(enemy.getHp()<=0){
-            return monster1;
-        }
-        else if(monster1.getHp()<=0){
-            return enemy;
-        }
 
+            if(enemy.getHp()<=0){
+                return monster1;
+            }
+            else if(monster1.getHp()<=0){
+                return enemy;
+            }
+        }
         return monster1;
     }
 

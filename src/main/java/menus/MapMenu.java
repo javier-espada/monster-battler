@@ -37,6 +37,10 @@ public class MapMenu {
                             BattleMenu battleMenu = new BattleMenu((Battle) map.getEncounterList().get(map.getCurrentEncounter()+i));
 
                             battleMenu.run();
+                            if(((Battle) map.getEncounterList().get(map.getCurrentEncounter()+i)).getEnemy()==map.getBoss()){
+                                System.out.println("You won!");
+                                System.exit(0);
+                            }
                             System.out.println("Do you want to capture the monster?");
                             System.out.println("y/n");
                             Scanner sc2 = new Scanner(System.in);
@@ -49,10 +53,6 @@ public class MapMenu {
                                     break;
                             }
 
-                            if(((Battle) map.getEncounterList().get(map.getCurrentEncounter()+i)).getEnemy()==map.getBoss()){
-                            System.out.println("You won!");
-                            System.exit(0);
-                        }
                             break;
                         case "Rest":
                             System.out.println("It's a rest site!");
