@@ -5,6 +5,7 @@ import map.Battle;
 import map.Map;
 import map.RestSite;
 import map.TrainingSpot;
+import map.Encounter;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -23,6 +24,7 @@ public class MapMenu {
             System.out.println("What do you wanna do:");
             System.out.println("1. Explore the next encounter:");
             System.out.println("2. Face the boss:");
+            System.out.println("3. Check stats");
             Scanner sc = new Scanner(System.in);
             option = sc.nextInt();
             sc.nextLine();
@@ -48,7 +50,9 @@ public class MapMenu {
                             switch (capture) {
                                 case 'y':
                                     map.setMyMonster(((Battle) map.getEncounterList().get(map.getCurrentEncounter() + i)).getEnemy());
-
+                                    for (Encounter encounter:map.getEncounterList()) {
+                                        encounter.setMyMonster(map.getMyMonster());
+                                    }
                                     break;
                                 default:
                                     break;
@@ -84,7 +88,13 @@ public class MapMenu {
                     break;
 
                 default:
-                    System.out.println("Invalid option");
+                    System.out.println("Your monster is:" + map.getMyMonster().getName());
+                    System.out.println("Level: " + map.getLevel());
+                    System.out.println("HP: " + map.getMyMonster().getHp());
+                    System.out.println("Health: " + map.getMyMonster().getSpeed());
+                    System.out.println("Power: " + map.getMyMonster().getDefense());
+                    System.out.println("Speed: " + map.getMyMonster().getDefense());
+                    System.out.println("Defense: " + map.getMyMonster().getDefense());
 
             }
         }
