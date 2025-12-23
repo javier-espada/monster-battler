@@ -69,7 +69,7 @@ public class Map {
         encounterList = new ArrayList<>();
         setMyMonster();
 
-        for (int i = 0; i < level + 3; i++) {
+        for (int i = 0; i < level + 5; i++) {
             currentEncounter = (int) (Math.random() * 3)+1;
             switch (currentEncounter){
                 case 2:

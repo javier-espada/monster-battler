@@ -50,6 +50,7 @@ public class MapMenu {
                             switch (capture) {
                                 case 'y':
                                     map.setMyMonster(((Battle) map.getEncounterList().get(map.getCurrentEncounter() + i)).getEnemy());
+                                    RestSite.healMonster(map.getMyMonster());
                                     for (Encounter encounter:map.getEncounterList()) {
                                         encounter.setMyMonster(map.getMyMonster());
                                     }
