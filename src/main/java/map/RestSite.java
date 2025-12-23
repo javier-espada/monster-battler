@@ -3,11 +3,12 @@ package map;
 import monsters.Monster;
 
 public class RestSite extends Encounter {
-    public RestSite(){
+    public RestSite(Monster myMonster){
+        super(myMonster);
         this.type="Rest";
     }
 
-    public void healMonster(Monster monster){
+    public static void healMonster(Monster monster){
         monster.setHp(monster.getLevel()*monster.getHealth());
     }
 }

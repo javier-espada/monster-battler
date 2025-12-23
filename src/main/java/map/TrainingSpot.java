@@ -6,11 +6,12 @@ import static java.lang.Math.random;
 
 public class TrainingSpot extends Encounter {
 
-    public TrainingSpot(){
-        this.type="TrainingSpot";
+    public TrainingSpot(Monster myMonster){
+        super(myMonster);
+        this.type="Training";
     }
 
-    public void levelUp(Monster monster,int option){
+    public static void levelUp(Monster monster,int option){
         monster.setLevel(monster.getLevel()+1);
         monster.setHp(monster.getLevel()*monster.getHealth());
 
