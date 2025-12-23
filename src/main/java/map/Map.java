@@ -115,4 +115,8 @@ public class Map {
     public Monster getBoss() {
         return boss;
     }
+
+    public void setMyMonster(Monster myMonster) {
+        this.myMonster = myMonster;
+    }
 }

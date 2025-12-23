@@ -37,6 +37,18 @@ public class MapMenu {
                             BattleMenu battleMenu = new BattleMenu((Battle) map.getEncounterList().get(map.getCurrentEncounter()+i));
 
                             battleMenu.run();
+                            System.out.println("Do you want to capture the monster?");
+                            System.out.println("y/n");
+                            Scanner sc2 = new Scanner(System.in);
+                            char capture = sc2.next().charAt(0);
+                            switch (capture) {
+                                case 'y':
+                                    map.setMyMonster(((Battle) map.getEncounterList().get(map.getCurrentEncounter() + i)).getEnemy());
+                                    break;
+                                default:
+                                    break;
+                            }
+
                             if(((Battle) map.getEncounterList().get(map.getCurrentEncounter()+i)).getEnemy()==map.getBoss()){
                             System.out.println("You won!");
                             System.exit(0);
