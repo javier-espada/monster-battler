@@ -20,6 +20,7 @@ public class BattleMenu {
             System.out.println("You won! Let's keep going!");
         } else {
             System.out.println("You lost! More luck next time");
+            System.exit(0);
         };
     }
 }

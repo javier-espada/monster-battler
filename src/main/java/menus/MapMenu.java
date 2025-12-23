@@ -35,11 +35,12 @@ public class MapMenu {
                         case "Battle":
                             System.out.println("It's a battle!");
                             BattleMenu battleMenu = new BattleMenu((Battle) map.getEncounterList().get(map.getCurrentEncounter()+i));
-                            if(((Battle) map.getEncounterList().get(map.getCurrentEncounter()+i)).getEnemy()==map.getBoss())1{
+
+                            battleMenu.run();
+                            if(((Battle) map.getEncounterList().get(map.getCurrentEncounter()+i)).getEnemy()==map.getBoss()){
                             System.out.println("You won!");
                             System.exit(0);
                         }
-                            battleMenu.run();
                             break;
                         case "Rest":
                             System.out.println("It's a rest site!");
@@ -63,6 +64,10 @@ public class MapMenu {
                 case 2:
 
                     System.out.println("Let's face the boss!:");
+                    BattleMenu battleMenu = new BattleMenu((Battle) map.getEncounterList().get(map.getEncounterList().size()-1));
+                    battleMenu.run();
+                    System.out.println("You won!");
+                    System.exit(0);
                     break;
 
                 default:
